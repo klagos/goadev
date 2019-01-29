@@ -9,7 +9,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = DB::table('users')->get();;
+        $users = DB::table('users')->get()->first();;
         $title = "Listado de usuarios";
         return view('users.index', compact('title', 'users'));
     }
