@@ -2,4 +2,4 @@
 
 
 ## Acerca del proyecto
-Este proyecto consiste en la creación de una página web la cual permita a los usuarios de la comunidad de Game Over Addiction poder registrarse en el sistema, para así poder nosotros como administración, tener un mejor control sobre eventos como torneos, competencias o cosasa de ese estilo.
+Este proyecto consiste en la creación de una página web la cual permita a los usuarios de la comunidad de Game Over Addiction poder registrarse en el sistema, para así poder nosotros como administración, tener un mejor control sobre eventos como torneos, competencias o cosas de ese estilo.
