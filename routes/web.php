@@ -11,10 +11,12 @@
 |
 */
 
+Route::get('/', 'UserController@prueba');
+/*
 Route::get('/', function () {
     return view('welcome');
 });
-
+*/
 Route::get('/usuarios', 'UserController@index')->name('users.index');
 
 Route::get('/usuarios/nuevo', 'UserController@create')->name('users.create');
@@ -24,4 +26,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/prueba', 'UserController@prueba');
+//Route::get('/prueba', 'UserController@prueba');
