@@ -74,7 +74,7 @@ class RegisterController extends Controller
         ]);
 
         $verifyUser = VerifyUser::create([
-            'user_id' => $user->id,
+            'user_id' => $user->user_id,
             'token' => sha1(time()),
         ]);
 
