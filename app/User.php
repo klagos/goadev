@@ -31,4 +31,9 @@ class User extends Authenticatable
     {
         return $this->email === 'goa@admin.cl';
     }
+
+    public function verifyUser()
+    {
+        return $this->hasOne('App\VerifyUser');
+    }
 }

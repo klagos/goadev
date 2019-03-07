@@ -27,3 +27,10 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //Route::get('/prueba', 'UserController@prueba');
+Route::get('/pruebados', 'HomeController@dashboard')->name('indexdashboard');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
