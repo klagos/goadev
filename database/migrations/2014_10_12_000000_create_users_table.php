@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->boolean('verified')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });
@@ -32,5 +33,9 @@ class CreateUsersTable extends Migration
     {
         Schema::dropIfExists('users');
     }
+<<<<<<< HEAD
     
 }
+=======
+}
+>>>>>>> bb349320b20732ff0d8bb0607d5aba3366268096
