@@ -31,15 +31,13 @@ class User extends Authenticatable
     {
         return $this->email === 'goa@admin.cl';
     }
-<<<<<<< HEAD
     public function torneos()
     {
         return $this->belongsToMany(Torneo::class);
-=======
-
+    }
+    
     public function verifyUser()
     {
         return $this->hasOne('App\VerifyUser');
->>>>>>> bb349320b20732ff0d8bb0607d5aba3366268096
     }
 }
