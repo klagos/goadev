@@ -170,7 +170,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => '/home/javier/goadev/storage/framework/cache/data',
+        'path' => '/home/elliot/Documents/goadev/storage/framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -220,7 +220,7 @@
         'port' => '3306',
         'database' => 'goadev',
         'username' => 'root',
-        'password' => 'javieeer._',
+        'password' => '1234',
         'unix_socket' => '',
         'charset' => 'utf8mb4',
         'collation' => 'utf8mb4_unicode_ci',
@@ -235,7 +235,7 @@
         'port' => '3306',
         'database' => 'goadev',
         'username' => 'root',
-        'password' => 'javieeer._',
+        'password' => '1234',
         'charset' => 'utf8',
         'prefix' => '',
         'schema' => 'public',
@@ -248,7 +248,7 @@
         'port' => '3306',
         'database' => 'goadev',
         'username' => 'root',
-        'password' => 'javieeer._',
+        'password' => '1234',
         'charset' => 'utf8',
         'prefix' => '',
       ),
@@ -275,12 +275,12 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => '/home/javier/goadev/storage/app',
+        'root' => '/home/elliot/Documents/goadev/storage/app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => '/home/javier/goadev/storage/app/public',
+        'root' => '/home/elliot/Documents/goadev/storage/app/public',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
@@ -324,13 +324,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => '/home/javier/goadev/storage/logs/laravel.log',
+        'path' => '/home/elliot/Documents/goadev/storage/logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => '/home/javier/goadev/storage/logs/laravel.log',
+        'path' => '/home/elliot/Documents/goadev/storage/logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -467,7 +467,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => '/home/javier/goadev/storage/framework/sessions',
+    'files' => '/home/elliot/Documents/goadev/storage/framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -487,9 +487,9 @@
   array (
     'paths' => 
     array (
-      0 => '/home/javier/goadev/resources/views',
+      0 => '/home/elliot/Documents/goadev/resources/views',
     ),
-    'compiled' => '/home/javier/goadev/storage/framework/views',
+    'compiled' => '/home/elliot/Documents/goadev/storage/framework/views',
   ),
   'trustedproxy' => 
   array (

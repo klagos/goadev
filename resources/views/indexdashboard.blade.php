@@ -10,7 +10,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Dashboard</title>
+    <title>Game Over Addiction - Dashboard</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -76,7 +76,7 @@
                         </li>
                         <li>
                             <a href="chart.html">
-                                <i class="fas fa-chart-bar"></i>Charts</a>
+                                <i class="fas fa-chart-bar"></i>Perfil</a>
                         </li>
                         <li>
                             <a href="table.html">
@@ -154,6 +154,8 @@
         </header>
         <!-- END HEADER MOBILE-->
 
+        @section('sidebar')
+        @show
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
@@ -184,7 +186,7 @@
                         </li>
                         <li>
                             <a href="chart.html">
-                                <i class="fas fa-chart-bar"></i>Charts</a>
+                                <i class="fas fa-chart-bar"></i>Perfil</a>
                         </li>
                         <li>
                             <a href="table.html">
@@ -261,6 +263,7 @@
             </div>
         </aside>
         <!-- END MENU SIDEBAR-->
+
 
         <!-- PAGE CONTAINER-->
         <div class="page-container">
@@ -438,6 +441,8 @@
             </header>
             <!-- HEADER DESKTOP-->
 
+            @section('content')
+            @show
             <!-- MAIN CONTENT-->
             <div class="main-content">
                 <div class="section__content section__content--p30">

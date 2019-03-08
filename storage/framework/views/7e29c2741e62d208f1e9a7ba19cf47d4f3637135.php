@@ -59,7 +59,8 @@
                                     </a>
 
                                     <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
-                                        @csrf
+                                        <?php echo e(csrf_field()); ?>
+
                                     </form>
                                 </div>
                             </li>
