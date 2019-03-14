@@ -14,7 +14,8 @@ class TorneoController extends Controller
      */
     public function index()
     {
-        //
+        $torneos = DB::table('torneos')->get()->orderBy('torneo_id', 'DESC')->paginate()->where('isActive', 1);
+		return view('dashboard.torneos', compact('torneos'));
     }
 
     /**
@@ -24,7 +25,7 @@ class TorneoController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.torneos.create');
     }
 
     /**
@@ -35,18 +36,12 @@ class TorneoController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\c  $c
-     * @return \Illuminate\Http\Response
-     */
-    public function show(c $c)
-    {
-        //
+        $torneo = new Torneo;
+        $torneo->name = $request->name;
+        $torneo->capacity = $request->capacity;
+		$torneo->save();
+		return redirect()->route('dashboard.torneos.create')
+		->with('info','El torneo ha sido agregado');
     }
 
     /**
@@ -57,7 +52,8 @@ class TorneoController extends Controller
      */
     public function edit(c $c)
     {
-        //
+        $torneo = Torneo::find($id);
+		return view('dashboard.torneos.edit', compact('torneo'));
     }
 
     /**
@@ -69,9 +65,19 @@ class TorneoController extends Controller
      */
     public function update(Request $request, c $c)
     {
-        //
+        $torneo = Torneo::find($torneo_id);
+		$torneo->name = $request->name;
+		$torneo->capacity = $request->capacity;
+		$torneo->save();
+		return redirect()->route('dashboard.torneos')
+		->with('info','El torneo ha sido modificado exitosamente');
     }
 
+    public function show($torneo_id)
+	{
+		$torneo = Torneo::find($torneo_id);
+        return view('dashboard.torneos', compact('torneo'));
+    }
     /**
      * Remove the specified resource from storage.
      *
@@ -80,6 +86,17 @@ class TorneoController extends Controller
      */
     public function destroy(c $c)
     {
-        //
+        $torneo = Product::find($torneo_id);
+		$torneo->delete();
+        return back()->with('info', 'El producto fue eliminado')  
+    }
+
+    public function change(Request $request, c $c)
+    {
+        $torneo = Torneo::find($torneo_id);
+
+		$torneo->save();
+		return redirect()->route('dashboard.torneos.index')
+		->with('info','El torneo ha sido modificado exitosamente');
     }
 }

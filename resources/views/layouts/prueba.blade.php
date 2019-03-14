@@ -11,7 +11,7 @@
             <div class="intro-text">
                 <div class="intro-lead-in">Bienvenido a nuestra página!</div>
                 <div class="intro-heading">Game Over Addiction</div>
-                <a href="#services" class="page-scroll btn btn-xl">Cuéntame más</a>
+                <a href="/home" class="page-scroll btn btn-xl">Login</a>
             </div>
         </div>
     </header>
