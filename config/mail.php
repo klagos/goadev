@@ -10,7 +10,7 @@ return [
 ],
 'encryption' => env('MAIL_ENCRYPTION', 'tls'),
 'username' => env('MAIL_USERNAME', 'adm.gameoveraddiction@gmail.com'),
-'password' => env('MAIL_PASSWORD', 'g04.d3vcl'),
+'password' => env('MAIL_PASSWORD', 'Aa36522654'),
 'sendmail' => '/usr/sbin/sendmail -bs',
 'pretend' => FALSE,
 

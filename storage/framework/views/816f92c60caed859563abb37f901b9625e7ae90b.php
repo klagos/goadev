@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
 <head>
-  <meta charset="UTF-8">
   <title>Verificación correo electrónico</title>  
   
 </head>
@@ -57,7 +56,7 @@
                                 </tr>
                                 <tr>
                                   <td align="center"> <span style="color:#48545d;font-size:22px;line-height: 24px;">
-          Bienvenido {{$user['name']}}, verifica tu correo electrónico
+          Bienvenido <?php echo e($user['name']); ?>, verifica tu correo electrónico
         </span>
 
                                   </td>
@@ -83,7 +82,7 @@
                                 </tr>
                                 <tr>
                                   <td valign="top" width="48%" align="center"> <span>
-          <a href="{{url('user/verify', $user->verifyUser->token)}}" style="display:block; padding:15px 25px; background-color:#0087D1; color:#ffffff; border-radius:3px; text-decoration:none;">Verificar correo electrónico</a>
+          <a href="<?php echo e(url('user/verify', $user->verifyUser->token)); ?>" style="display:block; padding:15px 25px; background-color:#0087D1; color:#ffffff; border-radius:3px; text-decoration:none;">Verificar correo electrónico</a>
         </span>
 
                                   </td>

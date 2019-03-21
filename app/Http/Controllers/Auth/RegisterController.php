@@ -93,7 +93,7 @@ class RegisterController extends Controller
                 $verifyUser->user->save();
                 $status = "Tu e-mail ha sido verificado correctamente. Ahora puedes iniciar sesión.";
             }else{
-                $status = "Tu e-amil ya ha sido verificado. Ahora puedes iniciar sesión.";
+                $status = "Tu e-mail ya ha sido verificado. Ahora puedes iniciar sesión.";
             }
         }else{
             return redirect('/login')->with('warning', "Lo sentimos, tu email no ha sido verificado.");
