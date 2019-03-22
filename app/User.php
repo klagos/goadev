@@ -33,7 +33,7 @@ class User extends Authenticatable
     }
     public function torneos()
     {
-        return $this->belongsToMany(Torneo::class);
+        return $this->belongsToMany('App\Torneo');
     }
     
     public function verifyUser()

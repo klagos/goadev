@@ -83,8 +83,8 @@
         </header>
         <!-- END HEADER MOBILE-->
 
-        @section('sidebar')
-        @show
+        <?php $__env->startSection('sidebar'); ?>
+        <?php echo $__env->yieldSection(); ?>
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
@@ -254,7 +254,7 @@
                                             <img src="images/icon/avatar-01.jpg" alt="John Doe" />
                                         </div>
                                         <div class="content">
-                                            <a class="js-acc-btn" href="#">{{ Auth::user()->name }}</a>
+                                            <a class="js-acc-btn" href="#"><?php echo e(Auth::user()->name); ?></a>
                                         </div>
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
@@ -298,8 +298,8 @@
             </header>
             <!-- HEADER DESKTOP-->
 
-            @section('content')
-            @show
+            <?php $__env->startSection('content'); ?>
+            <?php echo $__env->yieldSection(); ?>
             <!-- MAIN CONTENT-->
             <div class="main-content">
                 <div class="section__content section__content--p30">

@@ -2,22 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\c;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use App\Torneo;
-
-class TorneoController extends Controller
+use App\TorneoUser;
+use DB;
+class TorneoUserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        $torneos = DB::table('torneos')->get()->where('isActive', 1);
-		return view('torneos', compact('torneos'));
+        //$torneos = DB::table('torneo_user')->get();
+		//return view('torneos', compact('torneos'));
     }
 
     /**
@@ -38,14 +31,18 @@ class TorneoController extends Controller
      */
     public function store(Request $request)
     {
-        $torneo = new Torneo;
-        $torneo->name = $request->Nombre;
-        $torneo->capacity = $request->Capacidad;
-        $torneo->actual = 0;
-        $torneo->isActive = 1;
-		$torneo->save();
-		return redirect()->route('crearTorneo')
-		->with('info','El torneo ha sido agregado');
+        if ($request->inscrito){
+            DB::table('torneo_user')->where('torneo_id', '=', $request->torneo_id)->where('user_id', '=', $request->user_id)->delete();
+            $actual=DB::table('torneos')->where('torneo_id','=', $request->torneo_id)->first();
+        DB::table('torneos')->where('torneo_id','=', $request->torneo_id)->update(['actual'=> $actual->actual-1]);
+            return redirect()->route('torneos')->with('info','El torneo ha sido modificado exitosamente');
+        }
+        DB::table('torneo_user')->insert(
+            ['user_id' => $request->user_id, 'torneo_id' => $request->torneo_id]
+        );
+        $actual=DB::table('torneos')->where('torneo_id','=', $request->torneo_id)->first();
+        DB::table('torneos')->where('torneo_id','=', $request->torneo_id)->update(['actual'=> $actual->actual+1]);
+		return redirect()->route('torneos');
     }
 
     /**
@@ -56,7 +53,7 @@ class TorneoController extends Controller
      */
     public function edit(c $c)
     {
-        $torneo = Torneo::find($id);
+        $torneo = TorneoUser::find($id);
 		return view('dashboard.torneos.edit', compact('torneo'));
     }
 
@@ -88,11 +85,12 @@ class TorneoController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function destroy(c $c)
+    public function destroy(Request $request)
     {
-        $torneo = Product::find($torneo_id);
-		$torneo->delete();
-        return back()->with('info', 'El producto fue eliminado');  
+        DB::table('torneo_user')->where('torneo_id', '=', $request->torneo_id)->where('user_id', '=', $request->user_id)->delete();
+        //$torneo = ::find($torneo_id);
+		//$torneo->delete();
+        //return back()->with('info', 'Desinscribiste el torneo exitosamente');  
     }
 
     public function change(Request $request, c $c)

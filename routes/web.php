@@ -27,10 +27,13 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //Route::get('/prueba', 'UserController@prueba');
-Route::get('/pruebados', 'HomeController@dashboard')->name('indexdashboard');
+Route::get('/dashboard', 'HomeController@dashboard')->name('indexdashboard');
 
 Auth::routes();
-
+Route::get('/torneos', 'TorneoController@index')->name('torneos');
 Route::get('/home', 'HomeController@index')->name('home');
-
+Route::post('torneos', 'TorneoUserController@store');
 Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
+
+Route::get('crearTorneo', 'TorneoController@create')->name('crearTorneo');
+Route::post('crearTorneo', 'TorneoController@store');
