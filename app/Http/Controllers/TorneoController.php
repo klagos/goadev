@@ -17,7 +17,7 @@ class TorneoController extends Controller
     public function index()
     {
         $torneos = DB::table('torneos')->get()->where('isActive', 1);
-		return view('torneos', compact('torneos'));
+		return view('dashboard.torneos.torneos', compact('torneos'));
     }
 
     /**
@@ -48,32 +48,17 @@ class TorneoController extends Controller
 		->with('info','El torneo ha sido agregado');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\c  $c
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(c $c)
+    public function update(Request $request)
     {
-        $torneo = Torneo::find($id);
-		return view('dashboard.torneos.edit', compact('torneo'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\c  $c
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, c $c)
-    {
-        $torneo = Torneo::find($torneo_id);
-		$torneo->name = $request->name;
-		$torneo->capacity = $request->capacity;
-		$torneo->save();
-		return redirect()->route('dashboard.torneos')
+        if ($request->name != '' && $request->capacity != '')
+        {
+            DB::table('torneos')->where('torneo_id','=',$request->torneo_id)->update(['name' => $request->name, 'capacity' => $request->capacity]);            
+        }else if($request->name !=''){
+            DB::table('torneos')->where('torneo_id','=',$request->torneo_id)->update(['name' => $request->name]);
+        }else {
+            DB::table('torneos')->where('torneo_id','=',$request->torneo_id)->update(['capacity' => $request->capacity]);
+        }
+		return redirect()->route('torneos')
 		->with('info','El torneo ha sido modificado exitosamente');
     }
 

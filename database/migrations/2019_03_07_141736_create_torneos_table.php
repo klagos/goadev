@@ -15,7 +15,7 @@ class CreateTorneosTable extends Migration
     {
         Schema::create('torneos', function (Blueprint $table) {
             $table->increments('torneo_id');
-            $table->string('name');
+            $table->string('name',150);
             $table->integer('capacity');
             $table->integer('actual');
             $table->boolean('isActive');

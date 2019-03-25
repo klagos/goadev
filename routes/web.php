@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'UserController@prueba');
+Route::get('/', 'UserController@prueba')->name('/');
 /*
 Route::get('/', function () {
     return view('welcome');
@@ -20,6 +20,7 @@ Route::get('/', function () {
 Route::get('/usuarios', 'UserController@index')->name('users.index');
 
 Route::get('/usuarios/nuevo', 'UserController@create')->name('users.create');
+Route::get('/logout', 'HomeController@logout')->name('logout');
 
 Route::get('/usuarios/detalles/{id}', 'UserController@show')->where('id', '[0-9]+')->name('users.show');
 Auth::routes();
@@ -37,3 +38,11 @@ Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
 
 Route::get('crearTorneo', 'TorneoController@create')->name('crearTorneo');
 Route::post('crearTorneo', 'TorneoController@store');
+
+Route::get('/editarTorneo/{torneo_id}', function ($torneo_id){ 
+    $torneo=DB::table('torneos')->where('torneo_id','=',$torneo_id)->first();
+    return view('dashboard.torneos.editarTorneo')->with('torneo',$torneo);
+});
+Route::post('/editarTorneo', 'TorneoController@update')->name('editarTorneo');
+
+
