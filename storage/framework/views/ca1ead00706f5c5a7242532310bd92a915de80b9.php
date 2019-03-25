@@ -1,10 +1,8 @@
-@extends('template')
+<?php $__env->startSection('nav'); ?>
+	
+<?php $__env->stopSection(); ?>
 
-@section('nav')
-	@extends('navbar')
-@endsection
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 <!-- Header -->
     <header>
         <div class="container">
@@ -146,8 +144,10 @@
             </div>
         </div>
     </aside>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('footer')
-    @include('footer')
-@endsection
+<?php $__env->startSection('footer'); ?>
+    <?php echo $__env->make('footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('navbar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('template', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

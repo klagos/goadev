@@ -36,13 +36,13 @@
                                         echo Form::hidden('user_id', Auth::user()->id);
                                         echo Form::hidden('torneo_id', $torneo->torneo_id);
                                         echo Form::hidden('inscrito', 1);
-                                        echo Form::submit('Desinscribirse');
+                                        echo Form::submit('Desinscribirse',['class' => 'btn btn-large btn-danger']);
                                     } 
                                 } else {
                                     echo Form::hidden('user_id', Auth::user()->id);
                                     echo Form::hidden('torneo_id', $torneo->torneo_id);
                                     echo Form::hidden('inscrito', 0);
-                                    echo Form::submit('Inscribirse');
+                                    echo Form::submit('Inscribirse',['class' => 'btn btn-large btn-primary']);
                                 }
                                 echo Form::close();
                             ?>

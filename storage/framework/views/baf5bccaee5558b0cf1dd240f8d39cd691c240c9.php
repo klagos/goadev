@@ -40,7 +40,7 @@
   100% { -webkit-transform: rotate(360deg); }
 }
 
-@keyframes spin {
+@keyframes  spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
@@ -59,7 +59,7 @@
   to { bottom:0px; opacity:1 }
 }
 
-@keyframes animatebottom { 
+@keyframes  animatebottom { 
   from{ bottom:-100px; opacity:0 } 
   to{ bottom:0; opacity:1 }
 }
@@ -123,14 +123,14 @@ function showPage() {
 <div style="display:none;" id="myDiv" class="animate-bottom">
   
 
-    @section('nav')
-    @show
+    <?php $__env->startSection('nav'); ?>
+    <?php echo $__env->yieldSection(); ?>
 
-    @section('content')
-    @show
+    <?php $__env->startSection('content'); ?>
+    <?php echo $__env->yieldSection(); ?>
 
-    @section('footer')
-    @show
+    <?php $__env->startSection('footer'); ?>
+    <?php echo $__env->yieldSection(); ?>
     <!-- Portfolio Modals -->
     <!-- Use the modals below to showcase details about your portfolio projects! -->
 

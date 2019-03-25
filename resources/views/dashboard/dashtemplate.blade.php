@@ -13,7 +13,7 @@
     @section('title')
     
     @show 
-
+    <link rel="icon" type="image/png" href="images/icons/fav3.ico"/>
     <!-- Fontfaces CSS-->
     <link href="{{ asset('css/font-face.css') }}" rel="stylesheet" media="all">
     <link href="{{ asset('vendor/font-awesome-4.7/css/font-awesome.min.css') }}" rel="stylesheet" media="all">
@@ -44,7 +44,7 @@
             <div class="header-mobile__bar">
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
-                        <a class="logo" href="index.html">
+                        <a class="logo" href="/dashboard">
                             <img src="images/icon/logoGOA.png" alt="Game Over Addiction" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
@@ -58,6 +58,10 @@
             <nav class="navbar-mobile">
                 <div class="container-fluid">
                     <ul class="navbar-mobile__list list-unstyled">
+                        <li>
+                            <a href="/dashboard">
+                                <i class="fas fa-chart-bar"></i>Dashboard</a>
+                        </li>
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-desktop"></i>Torneos</a>
@@ -69,10 +73,6 @@
                                     <a href="/crearTorneo">Crear</a>
                                 </li>
                             </ul>
-                        </li>
-                        <li>
-                            <a href="chart.html">
-                                <i class="fas fa-chart-bar"></i>Perfil</a>
                         </li>
                     </ul>
                 </div>
@@ -85,13 +85,17 @@
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
-                <a href="/torneos">
+                <a href="/dashboard">
                     <img src="{{ asset('images/icon/logoGOA.png') }}" alt="Game Over Addiction" />
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
+                        <li>
+                            <a href="/dashboard">
+                                <i class="fas fa-chart-bar"></i>Dashboard</a>
+                        </li>
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-desktop"></i>Torneos</a>
@@ -103,10 +107,6 @@
                                     <a href="/crearTorneo">Crear</a>
                                 </li>
                             </ul>
-                        </li>
-                        <li>
-                            <a href="chart.html">
-                                <i class="fas fa-chart-bar"></i>Perfil</a>
                         </li>
                     </ul>
                 </nav>

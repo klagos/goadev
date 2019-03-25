@@ -28,7 +28,7 @@ class HomeController extends Controller
 
     public function dashboard()
     {
-        return view('indexdashboard');
+        return view('dashboard.dashboard');
     }
 
     public function logout()
