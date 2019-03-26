@@ -57,9 +57,8 @@
                                 </tr>
                                 <tr>
                                   <td align="center"> <span style="color:#48545d;font-size:22px;line-height: 24px;">
-          Bienvenido {{$user['name']}}, verifica tu correo electrónico
+          Bienvenid@ {{$user['name']}}, verifica tu correo electrónico
         </span>
-
                                   </td>
                                 </tr>
                                 <tr>
