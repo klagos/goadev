@@ -43,6 +43,8 @@ class TorneoController extends Controller
         $torneo->capacity = $request->Capacidad;
         $torneo->actual = 0;
         $torneo->isActive = 1;
+        $torneo->fecha = $request->fecha;
+        $torneo->hora = $request->hora;
 		$torneo->save();
 		return redirect()->route('crearTorneo')
 		->with('info','El torneo ha sido agregado');
@@ -50,13 +52,17 @@ class TorneoController extends Controller
 
     public function update(Request $request)
     {
-        if ($request->name != '' && $request->capacity != '')
-        {
-            DB::table('torneos')->where('torneo_id','=',$request->torneo_id)->update(['name' => $request->name, 'capacity' => $request->capacity]);            
-        }else if($request->name !=''){
+        if($request->name !=''){
             DB::table('torneos')->where('torneo_id','=',$request->torneo_id)->update(['name' => $request->name]);
-        }else {
+        }
+        if($request->capacity !='') {
             DB::table('torneos')->where('torneo_id','=',$request->torneo_id)->update(['capacity' => $request->capacity]);
+        }
+        if($request->fecha !='') {
+            DB::table('torneos')->where('torneo_id','=',$request->torneo_id)->update(['fecha' => $request->fecha]);
+        }
+        if($request->hora !='') {
+            DB::table('torneos')->where('torneo_id','=',$request->torneo_id)->update(['hora' => $request->hora]);
         }
 		return redirect()->route('torneos')
 		->with('info','El torneo ha sido modificado exitosamente');

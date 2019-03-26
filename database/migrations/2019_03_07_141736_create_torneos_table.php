@@ -19,6 +19,8 @@ class CreateTorneosTable extends Migration
             $table->integer('capacity');
             $table->integer('actual');
             $table->boolean('isActive');
+            $table->date('fecha');
+            $table->string('hora', 50);
             $table->timestamps();
         });
     }

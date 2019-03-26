@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Torneo extends Model
 {
     protected $fillable = [
-        'name', 'capacity',
+        'name', 'capacity', 'fecha',
     ];
 
     public function users()
