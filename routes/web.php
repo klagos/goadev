@@ -32,10 +32,6 @@ Auth::routes();
 Auth::routes();
 Route::get('/torneos', 'TorneoController@index')->name('torneos');
 Route::get('/home', 'HomeController@dashboard')->name('home');
-<<<<<<< HEAD
-=======
-Route::get('/dashboard', 'HomeController@dashboard')->name('indexdashboard');
->>>>>>> bda57071b1191d71b7738ad4ec6f3f7b33a10325
 Route::post('torneos', 'TorneoUserController@store');
 Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
 

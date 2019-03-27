@@ -28,7 +28,7 @@
                           <td valign="top" align="center">
                             <a href="https://www.gameoveraddiction.com" style="display:inline-block; cursor:pointer; text-align:center;">
                               <img src="https://i.imgur.com/rh2QlbM.png"
-                              height="200" width="300" border="0" alt="Coinbase">
+                              height="200" width="300" border="0" alt="">
                             </a>
                           </td>
                         </tr>

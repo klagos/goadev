@@ -61,7 +61,11 @@
                         <div class="wrap-input100 validate-input" data-validate="username es requerido">
                             <label for="name"><span class="label-input100">Username</span></label>
                                 <input id="username" class="input100" type="text" placeholder="ejemplo@gmail.com" name="username" value="<?php echo e(old('username')); ?>"  required autofocus>
-
+                                <?php if($errors->has('username')): ?>
+                                    <span class="invalid-feedback">
+                                        <strong><?php echo e($errors->first('username')); ?></strong>
+                                    </span>
+                                <?php endif; ?>
                                 <span class="focus-input100"></span>
                         </div>
 
