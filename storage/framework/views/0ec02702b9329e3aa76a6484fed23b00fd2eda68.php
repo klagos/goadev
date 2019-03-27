@@ -22,7 +22,7 @@
                         <a class="page-scroll btn btn-danger" href="#team">Team</a>
                     </li>
                     <li>
-                        <a class="page-scroll btn btn-primary" href="#home">Login</a>
+                        <a class="page-scroll btn btn-primary" href="/home">Login</a>
                     </li>
                 </ul>
             </div>

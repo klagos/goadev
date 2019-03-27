@@ -27,7 +27,7 @@ CREATE TABLE `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -36,7 +36,7 @@ CREATE TABLE `migrations` (
 
 LOCK TABLES `migrations` WRITE;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-INSERT INTO `migrations` VALUES (14,'2019_03_07_143409_create_torneos_users_table',1),(16,'2014_10_12_000000_create_users_table',2),(17,'2014_10_12_100000_create_password_resets_table',2),(18,'2019_03_07_141736_create_torneos_table',2),(19,'2019_03_07_144604_create_verify_users_table',2),(20,'2019_03_21_183431_create_torneo_user_table',2);
+INSERT INTO `migrations` VALUES (1,'2014_10_12_000000_create_users_table',1),(2,'2014_10_12_100000_create_password_resets_table',1),(3,'2019_03_07_141736_create_torneos_table',1),(4,'2019_03_07_144604_create_verify_users_table',1),(5,'2019_03_21_183431_create_torneo_user_table',1);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -121,31 +121,6 @@ LOCK TABLES `torneos` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `torneos_users`
---
-
-DROP TABLE IF EXISTS `torneos_users`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `torneos_users` (
-  `user_id` int(11) NOT NULL,
-  `torneo_id` int(11) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`user_id`,`torneo_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `torneos_users`
---
-
-LOCK TABLES `torneos_users` WRITE;
-/*!40000 ALTER TABLE `torneos_users` DISABLE KEYS */;
-/*!40000 ALTER TABLE `torneos_users` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `users`
 --
 
@@ -163,7 +138,7 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -172,7 +147,6 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Kevin','k.lagoslavin@gmail.com','$2y$10$nCg9GCuFXLa.WS9EuPgjG.JErtCNSVTpKobRfW1gQGfYNoWRUG9Dm',0,'E3Rh2K3Psp3iK2surwphhQTHDileORIGVBPgXLM5J8AMrRN3O4RmYNxLuA0M','2019-03-26 03:33:36','2019-03-26 03:33:36');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -189,7 +163,7 @@ CREATE TABLE `verify_users` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -198,7 +172,6 @@ CREATE TABLE `verify_users` (
 
 LOCK TABLES `verify_users` WRITE;
 /*!40000 ALTER TABLE `verify_users` DISABLE KEYS */;
-INSERT INTO `verify_users` VALUES (1,'42b5f5d83417c3e7e3c82a3cea821c7b972f2384','2019-03-26 03:33:36','2019-03-26 03:33:36');
 /*!40000 ALTER TABLE `verify_users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -211,4 +184,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-26 10:52:43
+-- Dump completed on 2019-03-26 11:52:40

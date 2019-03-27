@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Login - Game Over Addiction</title>
+    <title>Registro - Game Over Addiction</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->  
-    <link rel="icon" type="image/png" href="images/icons/goa.ico"/>
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -29,46 +29,54 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
 </head>
-
-
 <body style="background-color: #999999;">
+    
     <div class="limiter">
-    <div class="container-login100">
-        <div class="login100-more" style="background-image: url('images/loginlogo.jpg');"></div>
-        <div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
-            <div class="card">
-                <div class="card-body">
-                    <?php if(session('status')): ?>
-                        <div class="alert alert-success">
-                            <?php echo e(session('status')); ?>
+        <div class="container-login100">
+            <div class="login100-more" style="background-image: url('images/keyboard.jpg');"></div>
 
-                        </div>
-                    <?php endif; ?>
-                    <?php if(session('warning')): ?>
-                        <div class="alert alert-warning">
-                            <?php echo e(session('warning')); ?>
-
-                        </div>
-                    <?php endif; ?>
-
-                    <div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
-                    <form class="login100-form validate-form" method="POST" action="<?php echo e(route('login')); ?>">
-                        <?php echo e(csrf_field()); ?>
+            <div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
+                <form class="login100-form validate-form" method="POST" action="<?php echo e(route('register')); ?>">
+                    <?php echo e(csrf_field()); ?>
 
                     <span class="login100-form-title p-b-59">
-                        Login
+                        Registro
                     </span>
-                        <div class="wrap-input100 validate-input" data-validate="Email es requerido">
-                        <label for="email"><span class="label-input100">Email</span></label>
-                        
-                        <input id="email" class="input100" type="email" class="form-control<?php echo e($errors->has('email') ? ' is-invalid' : ''); ?>" name="email" value="<?php echo e(old('email')); ?>" placeholder="ejemplo@gmail.com"required>
+                        <div class="wrap-input100 validate-input" data-validate="El campo nombre es requerido">
+                            <label for="name"><span class="label-input100">Nombre</span></label>
+                                <input id="name" class="input100" type="text" class="form-control<?php echo e($errors->has('name') ? ' is-invalid' : ''); ?>" placeholder="Perico Los Palotes" name="name" value="<?php echo e(old('name')); ?>" required autofocus>
 
-                        <?php if($errors->has('email')): ?>
-                            <span class="invalid-feedback">
-                                <strong><?php echo e($errors->first('email')); ?></strong>
-                            </span>
-                        <?php endif; ?>
-                            <span class="focus-input100"></span>
+                                <?php if($errors->has('name')): ?>
+                                    <span class="invalid-feedback">
+                                        <strong><?php echo e($errors->first('name')); ?></strong>
+                                    </span>
+                                <?php endif; ?>
+                                <span class="focus-input100"></span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input" data-validate="El campo username es requerido">
+                            <label for="username"><span class="label-input100">Username</span></label>
+                                <input id="username" class="input100" type="text" class="form-control<?php echo e($errors->has('username') ? ' is-invalid' : ''); ?>" placeholder="shroud" name="username" value="<?php echo e(old('username')); ?>" required autofocus>
+
+                                <?php if($errors->has('username')): ?>
+                                    <span class="invalid-feedback">
+                                        <strong><?php echo e($errors->first('username')); ?></strong>
+                                    </span>
+                                <?php endif; ?>
+                                <span class="focus-input100"></span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input" data-validate="Email es requerido">
+                            <label for="email"><span class="label-input100">Email</span></label>
+
+                                <input id="email" class="input100" type="email" class="form-control<?php echo e($errors->has('email') ? ' is-invalid' : ''); ?>" name="email" value="<?php echo e(old('email')); ?>" placeholder="ejemplo@gmail.com"required>
+
+                                <?php if($errors->has('email')): ?>
+                                    <span class="invalid-feedback">
+                                        <strong><?php echo e($errors->first('email')); ?></strong>
+                                    </span>
+                                <?php endif; ?>
+                                <span class="focus-input100"></span>
                         </div>
 
                         <div class="wrap-input100 validate-input" data-validate = "La contraseña es requerida">
@@ -82,37 +90,26 @@
                                 <span class="focus-input100"></span>
                         </div>
 
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" <?php echo e(old('remember') ? 'checked' : ''); ?>> <?php echo e(__('Recordarme')); ?>
-
-                                    </label>
-                                </div>
-                            </div>
+                        <div class="wrap-input100 validate-input" data-validate = "Repite tu contraseña">
+                            <label for="password-confirm"><span class="label-input100">Repite Contraseña</span></label>
+                                <input id="password-confirm" class="input100" type="password" class="form-control" name="password_confirmation" placeholder="*************" required>
                         </div>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    <?php echo e(__('Login')); ?>
+                    <div class="container-login100-form-btn">
+                        <div class="wrap-login100-form-btn">
+                            <div class="login100-form-bgbtn"></div>
+                                <button type="submit" class="login100-form-btn">
+                                    <?php echo e(__('Register')); ?>
 
                                 </button>
-
-                                <a class="btn btn-link" href="<?php echo e(route('password.request')); ?>">
-                                    <?php echo e(__('Forgot Your Password?')); ?>
-
-                                </a>
-                            </div>
                         </div>
+                    </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
+    
 <!--===============================================================================================-->
     <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->

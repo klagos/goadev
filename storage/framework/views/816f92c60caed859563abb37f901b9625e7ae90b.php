@@ -26,7 +26,7 @@
                         </tr>
                         <tr>
                           <td valign="top" align="center">
-                            <a href="https://www.coinbase.com" style="display:inline-block; cursor:pointer; text-align:center;">
+                            <a href="https://www.gameoveraddiction.com" style="display:inline-block; cursor:pointer; text-align:center;">
                               <img src="https://i.imgur.com/rh2QlbM.png"
                               height="200" width="300" border="0" alt="Coinbase">
                             </a>
@@ -48,7 +48,7 @@
                               <tbody>
                                 <tr>
                                   <td align="center" valign="bottom" colspan="2" cellpadding="3">
-                                    <img alt="Coinbase" width="80" src="https://www.coinbase.com/assets/app/icon_email-e8c6b940e8f3ec61dcd56b60c27daed1a6f8b169d73d9e79b8999ff54092a111.png"
+                                    <img width="80" src="https://i.imgur.com/MOfdSpZ.png"
                                     />
                                   </td>
                                 </tr>
@@ -91,10 +91,6 @@
                                   <td height="20" &nbsp;=""></td>
                                 </tr>
                                 <tr>
-                                  <td align="center">
-                                    <img src="https://s3.amazonaws.com/app-public/Coinbase-notification/hr.png" width="54"
-                                    height="2" border="0">
-                                  </td>
                                 </tr>
                                 <tr>
                                   <td height="20" &nbsp;=""></td>
