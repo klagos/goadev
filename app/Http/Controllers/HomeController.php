@@ -31,7 +31,7 @@ class HomeController extends Controller
 
     public function dashboard()
     {
-        $torneos = DB::table('torneos')->whereIn('torneo_id',TorneoUser::select('torneo_id')->where('user_id',auth()->user()->id)->get())->get();
+        $torneos = DB::table('torneos')->latest('fecha')->whereIn('torneo_id',TorneoUser::select('torneo_id')->where('user_id',auth()->user()->id)->get())->get();
         return view('dashboard.dashboard')->with('torneos',$torneos);
     }
 

@@ -32,10 +32,8 @@ Auth::routes();
 Auth::routes();
 Route::get('/torneos', 'TorneoController@index')->name('torneos');
 Route::get('/home', 'HomeController@dashboard')->name('home');
-<<<<<<< HEAD
-=======
 Route::get('/dashboard', 'HomeController@dashboard')->name('indexdashboard');
->>>>>>> bda57071b1191d71b7738ad4ec6f3f7b33a10325
+
 Route::post('torneos', 'TorneoUserController@store');
 Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
 
@@ -47,6 +45,8 @@ Route::get('/editarTorneo/{torneo_id}', 'TorneoController@edit')->middleware(Adm
 Route::post('/editarTorneo', 'TorneoController@update')->name('editarTorneo');
 
 Route::get('/inscritos/{torneo_id}','TorneoUserController@show')->name('inscritos')->middleware(Admin::class);
+Route::get('/change/{torneo_id}','TorneoController@change')->name('change')->middleware(Admin::class);
+Route::get('/borrarTorneo/{torneo_id}','TorneoController@destroy')->name('borrarTorneo')->middleware(Admin::class);
 
 Route::post('/drop','TorneoUserController@destroy');
 
