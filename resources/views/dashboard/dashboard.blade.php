@@ -1,5 +1,10 @@
 @extends('dashboard.dashtemplate')
 
+@section('title')
+    @parent
+    <title>Game Over Addiction - Dashboard</title>
+@endsection
+
 @section('content2')
     @parent
     <div class="row m-t-25">
@@ -26,5 +31,26 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="row m-t-25">
+    <div class="table-responsive table--no-card m-b-40">
+                <table class="table table-borderless table-striped table-earning">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Fecha Inicio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($torneos as $torneo)
+                        <tr>
+                            <td class="text-xs-left">{{$torneo->name}}</td>
+                            <td class="text-xs-left">{{$torneo->fecha }}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+
     </div>
 @endsection

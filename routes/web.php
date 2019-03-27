@@ -45,4 +45,7 @@ Route::get('/editarTorneo/{torneo_id}', function ($torneo_id){
 });
 Route::post('/editarTorneo', 'TorneoController@update')->name('editarTorneo');
 
+Route::get('/inscritos/{torneo_id}','TorneoUserController@show')->name('inscritos');
+
+Route::post('/drop','TorneoUserController@destroy');
 

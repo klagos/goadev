@@ -17,7 +17,10 @@
                             <th>Fecha Inicio</th>
                             <th>Hora</th>
                             <th>Inscripción</th>
-                            <th>Editar</th>
+                            <?php if(Auth::user()->email != "adm.gameoveraddiction@gmail.com"): ?>
+                            <th></th>
+                            <th></th>
+                            <?php endif; ?>
                         </tr>
                     </thead>
                     <tbody>
@@ -50,7 +53,10 @@
                                 echo Form::close();
                             ?>
                             </td>
+                            <?php if(Auth::user()->email != "adm.gameoveraddiction@gmail.com"): ?>
                             <td><a href="/editarTorneo/<?php echo e($torneo->torneo_id); ?>">Editar</a></td>
+                            <td><a href="/inscritos/<?php echo e($torneo->torneo_id); ?>">Ver</a></td>
+                            <?php endif; ?>
                         </tr>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </tbody>

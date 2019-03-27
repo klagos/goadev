@@ -96,18 +96,25 @@
                             <a href="/dashboard">
                                 <i class="fas fa-chart-bar"></i>Dashboard</a>
                         </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-desktop"></i>Torneos</a>
-                            <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li>
-                                    <a href="/torneos">Lista</a>
-                                </li>
-                                <li>
-                                    <a href="/crearTorneo">Crear</a>
-                                </li>
-                            </ul>
+                        @if(Auth::user()->email == "adm.gameoveraddiction@gmail.com")
+                            <li class="has-sub">                            
+                                <a class="js-arrow" href="#">
+                                    <i class="fas fa-desktop"></i>Torneos</a>
+                                <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                    <li>
+                                        <a href="/torneos">Lista</a>
+                                    </li>
+                                    <li>
+                                        <a href="/crearTorneo">Crear</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        @else
+                        <li>
+                            <a href="/torneos">
+                                <i class="fas fa-chart-bar"></i>Torneos</a>
                         </li>
+                        @endif
                     </ul>
                 </nav>
             </div>

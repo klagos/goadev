@@ -76,8 +76,9 @@ class TorneoUserController extends Controller
 
     public function show($torneo_id)
 	{
-		$torneo = Torneo::find($torneo_id);
-        return view('dashboard.torneos', compact('torneo'));
+        $users = DB::table('users')->whereIn('id',TorneoUser::select('user_id')->where('torneo_id','=', $torneo_id)->get())->get();
+
+        return view('dashboard.torneos.inscritos')->with('users', $users)->with('torneo_id',$torneo_id);
     }
     /**
      * Remove the specified resource from storage.
@@ -88,9 +89,7 @@ class TorneoUserController extends Controller
     public function destroy(Request $request)
     {
         DB::table('torneo_user')->where('torneo_id', '=', $request->torneo_id)->where('user_id', '=', $request->user_id)->delete();
-        //$torneo = ::find($torneo_id);
-		//$torneo->delete();
-        //return back()->with('info', 'Desinscribiste el torneo exitosamente');  
+        return back();  
     }
 
     public function change(Request $request, c $c)

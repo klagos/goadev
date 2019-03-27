@@ -18,7 +18,10 @@
                             <th>Fecha Inicio</th>
                             <th>Hora</th>
                             <th>Inscripción</th>
-                            <th>Editar</th>
+                            @if (Auth::user()->email != "adm.gameoveraddiction@gmail.com")
+                            <th></th>
+                            <th></th>
+                            @endif
                         </tr>
                     </thead>
                     <tbody>
@@ -51,7 +54,10 @@
                                 echo Form::close();
                             ?>
                             </td>
+                            @if (Auth::user()->email != "adm.gameoveraddiction@gmail.com")
                             <td><a href="/editarTorneo/{{ $torneo->torneo_id }}">Editar</a></td>
+                            <td><a href="/inscritos/{{ $torneo->torneo_id }}">Ver</a></td>
+                            @endif
                         </tr>
                         @endforeach
                     </tbody>

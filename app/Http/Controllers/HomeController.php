@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Torneo;
+use App\TorneoUser;
 
 class HomeController extends Controller
 {
@@ -28,7 +31,8 @@ class HomeController extends Controller
 
     public function dashboard()
     {
-        return view('dashboard.dashboard');
+        $torneos = DB::table('torneos')->whereIn('torneo_id',TorneoUser::select('torneo_id')->where('user_id',auth()->user()->id)->get())->get();
+        return view('dashboard.dashboard')->with('torneos',$torneos);
     }
 
     public function logout()
