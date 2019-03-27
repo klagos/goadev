@@ -11,6 +11,8 @@
 |
 */
 
+use App\Http\Middleware\Admin;
+
 Route::get('/', 'UserController@prueba')->name('/');
 /*
 Route::get('/', function () {
@@ -32,20 +34,18 @@ Route::get('/dashboard', 'HomeController@dashboard')->name('indexdashboard');
 
 Auth::routes();
 Route::get('/torneos', 'TorneoController@index')->name('torneos');
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@dashboard')->name('home');
 Route::post('torneos', 'TorneoUserController@store');
 Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
 
-Route::get('crearTorneo', 'TorneoController@create')->name('crearTorneo');
+Route::get('crearTorneo', 'TorneoController@create')->name('crearTorneo')->middleware(Admin::class);
 Route::post('crearTorneo', 'TorneoController@store');
 
-Route::get('/editarTorneo/{torneo_id}', function ($torneo_id){ 
-    $torneo=DB::table('torneos')->where('torneo_id','=',$torneo_id)->first();
-    return view('dashboard.torneos.editarTorneo')->with('torneo',$torneo);
-});
+Route::get('/editarTorneo/{torneo_id}', 'TorneoController@edit')->middleware(Admin::class);
+
 Route::post('/editarTorneo', 'TorneoController@update')->name('editarTorneo');
 
-Route::get('/inscritos/{torneo_id}','TorneoUserController@show')->name('inscritos');
+Route::get('/inscritos/{torneo_id}','TorneoUserController@show')->name('inscritos')->middleware(Admin::class);
 
 Route::post('/drop','TorneoUserController@destroy');
 

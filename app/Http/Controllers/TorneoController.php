@@ -94,4 +94,10 @@ class TorneoController extends Controller
 		return redirect()->route('dashboard.torneos.index')
 		->with('info','El torneo ha sido modificado exitosamente');
     }
+
+    public function edit($torneo_id)
+    {
+        $torneo=DB::table('torneos')->where('torneo_id','=',$torneo_id)->first();
+        return view('dashboard.torneos.editarTorneo')->with('torneo',$torneo);
+    }
 }

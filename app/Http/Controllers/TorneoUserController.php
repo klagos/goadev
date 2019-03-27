@@ -94,10 +94,5 @@ class TorneoUserController extends Controller
 
     public function change(Request $request, c $c)
     {
-        $torneo = Torneo::find($torneo_id);
-
-		$torneo->save();
-		return redirect()->route('dashboard.torneos.index')
-		->with('info','El torneo ha sido modificado exitosamente');
     }
 }
