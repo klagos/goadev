@@ -42,12 +42,24 @@
                         Registro
                     </span>
                         <div class="wrap-input100 validate-input" data-validate="El campo nombre es requerido">
-                            <label for="name"><span class="label-input100">Nombre Completo</span></label>
+                            <label for="name"><span class="label-input100">Nombre</span></label>
                                 <input id="name" class="input100" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="Perico Los Palotes" name="name" value="{{ old('name') }}" required autofocus>
 
                                 @if ($errors->has('name'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
+                                <span class="focus-input100"></span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input" data-validate="El campo username es requerido">
+                            <label for="username"><span class="label-input100">Username</span></label>
+                                <input id="username" class="input100" type="text" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" placeholder="shroud" name="username" value="{{ old('username') }}" required autofocus>
+
+                                @if ($errors->has('username'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('username') }}</strong>
                                     </span>
                                 @endif
                                 <span class="focus-input100"></span>
@@ -91,6 +103,7 @@
                         </div>
                     </div>
                     </form>
+                </div>
             </div>
         </div>
     </div>

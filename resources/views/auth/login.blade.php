@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->  
-    <link rel="icon" type="image/png" href="images/icons/goa.ico"/>
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -29,43 +29,41 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
 </head>
-
-
 <body style="background-color: #999999;">
+    
     <div class="limiter">
-    <div class="container-login100">
-        <div class="login100-more" style="background-image: url('images/loginlogo.jpg');"></div>
-        <div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
-            <div class="card">
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-                    @if (session('warning'))
-                        <div class="alert alert-warning">
-                            {{ session('warning') }}
-                        </div>
-                    @endif
+        <div class="container-login100">
+            <div class="login100-more" style="background-image: url('images/loginlogo.jpg');"></div>
 
-                    <div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
-                    <form class="login100-form validate-form" method="POST" action="{{ route('login') }}">
-                        {{ csrf_field() }}
+            <div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
+                <form class="login100-form validate-form" method="POST" action="{{ route('login') }}">
+                    {{ csrf_field() }}
+                <div class="card">
+                    <div class="card-body">
+                        @if (session('status'))
+                            <div class="alert alert-success">
+                                {{ session('status') }}
+                            </div>
+                        @endif
+                        @if (session('warning'))
+                            <div class="alert alert-warning">
+                                {{ session('warning') }}
+                            </div>
+                        @endif
+                    </div>
+                </div>
                     <span class="login100-form-title p-b-59">
                         Login
                     </span>
-                        <div class="wrap-input100 validate-input" data-validate="Email es requerido">
-                        <label for="email"><span class="label-input100">Email</span></label>
-                        
-                        <input id="email" class="input100" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="ejemplo@gmail.com"required>
-
-                        @if ($errors->has('email'))
-                            <span class="invalid-feedback">
-                                <strong>{{ $errors->first('email') }}</strong>
-                            </span>
-                        @endif
-                            <span class="focus-input100"></span>
+                        <div class="wrap-input100 validate-input" data-validate="username es requerido">
+                            <label for="name"><span class="label-input100">Username</span></label>
+                                <input id="username" class="input100" type="text" placeholder="ejemplo@gmail.com" name="username" value="{{ old('username') }}"  required autofocus>
+                                @if ($errors->has('username'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('username') }}</strong>
+                                    </span>
+                                @endif
+                                <span class="focus-input100"></span>
                         </div>
 
                         <div class="wrap-input100 validate-input" data-validate = "La contraseña es requerida">
@@ -78,8 +76,7 @@
                                 @endif
                                 <span class="focus-input100"></span>
                         </div>
-
-                        <div class="form-group row">
+                       <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
                                 <div class="checkbox">
                                     <label>
@@ -105,8 +102,7 @@
             </div>
         </div>
     </div>
-</div>
-
+    
 <!--===============================================================================================-->
     <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
