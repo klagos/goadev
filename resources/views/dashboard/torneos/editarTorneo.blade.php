@@ -12,19 +12,19 @@
             echo Form::open(array('url' => '/editarTorneo'));
             
             echo Form::label('Nombre', 'Nombre');
-            echo Form::text('name');
+            echo Form::text('name', null, ['class' => 'form-control']);
             echo '<br/>';
             echo Form::label('Capacidad', 'Capacidad');
-            echo Form::number('capacity');
+            echo Form::number('capacity', null, ['class' => 'form-control']);
             echo '<br/>';
             echo Form::label('Fecha', 'Fecha Inicio');
-            echo Form::date('fecha');
+            echo Form::date('fecha', null, ['class' => 'form-control']);
             echo '<br/>';
             echo Form::label('Hora', 'Hora');
-            echo Form::text('hora');
+            echo Form::text('hora', null, ['class' => 'form-control']);
             echo '<br/>';
             echo Form::hidden('torneo_id', $torneo->torneo_id);   
-            echo Form::submit('Guardar');
+            echo Form::submit('Guardar', ['class' => 'btn btn-large btn-primary']);
             
             echo Form::close();
         ?>

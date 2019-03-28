@@ -25,6 +25,10 @@
                             <span>Torneos Inscritos</span>
                         </div>
                     </div>
+                    <div style="text-align: center">
+                        <img style="max-height:120px" src="images/chicken.png" alt="">
+                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -44,8 +48,8 @@
                             <span>Torneos Activos</span>
                         </div>
                     </div>
-                    <div >
-                        <img style="max-height:60%; max-width:60%" src="images/casco.jpg" alt="">
+                    <div style="text-align: center">
+                        <img style="max-height:120px" src="images/kirby.png" alt="">
                     </div>
                 </div>
             </div>

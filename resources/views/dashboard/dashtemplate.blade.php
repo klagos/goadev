@@ -45,7 +45,7 @@
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="/dashboard">
-                            <img src="images/icon/logoGOA.png" alt="Game Over Addiction" />
+                            <img style="max-height:100px" src="{{ asset('images/icon/logoGOA.png') }}" alt="Game Over Addiction" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -56,7 +56,6 @@
                 </div>
             </div>
             <nav class="navbar-mobile">
-                <div class="container-fluid">
                     <ul class="navbar-mobile__list list-unstyled">
                         <li>
                             <a href="/dashboard">
@@ -75,7 +74,6 @@
                             </ul>
                         </li>
                     </ul>
-                </div>
             </nav>
         </header>
         <!-- END HEADER MOBILE-->
@@ -85,7 +83,7 @@
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
-                <a href="/dashboard">
+                <a href="/">
                     <img src="{{ asset('images/icon/logoGOA.png') }}" alt="Game Over Addiction" />
                 </a>
             </div>
@@ -117,6 +115,10 @@
                         @endif
                     </ul>
                 </nav>
+                <div style="position:absolute; bottom: 0">
+                <img src="images/pikachu.gif" alt="">
+                </div>
+                
             </div>
         </aside>
         <!-- END MENU SIDEBAR-->

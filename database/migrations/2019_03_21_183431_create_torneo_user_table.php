@@ -18,8 +18,8 @@ class CreateTorneoUserTable extends Migration
             $table->integer('torneo_id')->unsigned();
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('torneo_id')->references('torneo_id')->on('torneos');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('torneo_id')->references('torneo_id')->on('torneos')->onDelete('cascade');
 
             $table->primary(['user_id','torneo_id']);
         });

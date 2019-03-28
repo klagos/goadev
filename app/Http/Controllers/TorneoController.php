@@ -6,6 +6,7 @@ use App\c;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Torneo;
+use App\TorneoUser;
 
 class TorneoController extends Controller
 {
@@ -17,7 +18,8 @@ class TorneoController extends Controller
     public function index()
     {
         $torneos = DB::table('torneos')->get()->where('isActive', 1);
-		return view('dashboard.torneos.torneos', compact('torneos'));
+        $torneosIn = DB::table('torneos')->get()->where('isActive', 0);
+		return view('dashboard.torneos.torneos', compact(['torneos','torneosIn']));
     }
 
     /**
@@ -79,19 +81,21 @@ class TorneoController extends Controller
      * @param  \App\c  $c
      * @return \Illuminate\Http\Response
      */
-    public function destroy(c $c)
+    public function destroy($torneo_id)
     {
-        $torneo = Product::find($torneo_id);
-		$torneo->delete();
+        DB::table('torneos')->where('torneo_id', '=', $torneo_id)->delete();
         return back()->with('info', 'El producto fue eliminado');  
     }
 
-    public function change(Request $request, c $c)
+    public function change($torneo_id)
     {
-        $torneo = Torneo::find($torneo_id);
-
-		$torneo->save();
-		return redirect()->route('dashboard.torneos.index')
+        $torneo = DB::table('torneos')->where('torneo_id',$torneo_id)->first();
+        if($torneo->isActive == 1){
+            DB::table('torneos')->where('torneo_id','=',$torneo_id)->update(['isActive' => 0]);
+        }else{
+            DB::table('torneos')->where('torneo_id','=',$torneo_id)->update(['isActive' => 1]);
+        }
+		return redirect()->route('torneos')
 		->with('info','El torneo ha sido modificado exitosamente');
     }
 
