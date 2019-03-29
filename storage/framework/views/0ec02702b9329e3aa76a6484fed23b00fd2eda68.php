@@ -16,10 +16,10 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll btn btn-primary btn-md" color="black" href="#services">Services</a>
+                        <a class="page-scroll btn btn-primary btn-md" color="black" href="#services">Servicios</a>
                     </li>
                     <li>
-                        <a class="page-scroll btn btn-danger" href="#team">Team</a>
+                        <a class="page-scroll btn btn-danger" href="#team">Equipo</a>
                     </li>
                     <li>
                         <a class="page-scroll btn btn-primary" href="/home">Login</a>
