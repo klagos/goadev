@@ -23,6 +23,7 @@
                         <th></th>
                         <th></th>
                         <th></th>
+                        <th></th>
                         @endif
                     </tr>
                 </thead>
@@ -56,11 +57,12 @@
                             echo Form::close();
                         ?>
                         </td>
-                        @if (Auth::user()->email != "adm.gameoveraddiction@gmail.com")
+                        @if (Auth::user()->email == "adm.gameoveraddiction@gmail.com" OR Auth::user()->email == "javier.moreno.icmin@gmail.com")
                         <td><a href="/editarTorneo/{{ $torneo->torneo_id }}">Editar</a></td>
                         <td><a href="/inscritos/{{ $torneo->torneo_id }}">Ver</a></td>
                         <td><a href="/change/{{ $torneo->torneo_id }}">Off</a></td>
                         <td><a href="/borrarTorneo/{{ $torneo->torneo_id }}">Kill</a></td>
+                        <td><a href="/crearCorreo/{{ $torneo->torneo_id }}">Correo</a></td>
                         @endif
                     </tr>
                     @endforeach
@@ -81,6 +83,7 @@
                         <th></th>
                         <th></th>
                         <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -98,6 +101,7 @@
                         <td><a href="/editarTorneo/{{ $torneo->torneo_id }}">Editar</a></td>
                         <td><a href="/inscritos/{{ $torneo->torneo_id }}">Ver</a></td>
                         <td><a href="/change/{{ $torneo->torneo_id }}">On</a></td>
+                        <td><a href="/crearCorreo/{{ $torneo->torneo_id }}">Correo</a></td>
                     </tr>
                     @endforeach
                 </tbody>

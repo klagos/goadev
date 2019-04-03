@@ -31,7 +31,6 @@ Auth::routes();
 
 Auth::routes();
 Route::get('/torneos', 'TorneoController@index')->name('torneos');
-Route::get('/home', 'HomeController@dashboard')->name('home');
 Route::get('/dashboard', 'HomeController@dashboard')->name('indexdashboard');
 Route::post('torneos', 'TorneoUserController@store');
 Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
@@ -49,3 +48,5 @@ Route::get('/borrarTorneo/{torneo_id}','TorneoController@destroy')->name('borrar
 
 Route::post('/drop','TorneoUserController@destroy');
 
+Route::get('/crearCorreo/{torneo_id}','TorneoController@crearCorreo')->name('correo');
+Route::post('/enviarCorreo','TorneoController@enviarCorreo');

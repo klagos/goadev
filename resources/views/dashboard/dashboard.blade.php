@@ -7,6 +7,8 @@
 
 @section('content2')
     @parent
+    <h1>Bienvenido {{ auth()->user()->username }}</h1>
+    <h4>Este es tu dashboard, a la izquierda puedes ver la seccion de torneos en donde aparecerán los torneos en curso, en tu dashboard aparecen la estadística de los torneos activos en los que estás inscritos, la cantidad de torneos activos y una tabla con tu historial de torneos.</h4>
     <div class="row m-t-25">
         <div class="col-sm-8 col-lg-4">
             <div class="overview-item overview-item--c1">
@@ -61,14 +63,16 @@
                 <thead>
                     <tr>
                         <th>Nombre</th>
-                        <th>Fecha Inicio</th>
+                        <th>Fecha</th>
+                        <th>Hora</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($torneos as $torneo)
                     <tr>
-                        <td class="text-xs-left">{{$torneo->name}}</td>
-                        <td class="text-xs-left">{{$torneo->fecha }}</td>
+                        <td class="text-xs-left">{{ $torneo->name }}</td>
+                        <td class="text-xs-left">{{ $torneo->fecha }}</td>
+                        <td class="text-xs-left">{{ $torneo->hora }}</td>
                     </tr>
                     @endforeach
                 </tbody>

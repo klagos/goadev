@@ -19,10 +19,10 @@
                         <a class="page-scroll btn btn-primary btn-md" color="black" href="#services">Servicios</a>
                     </li>
                     <li>
-                        <a class="page-scroll btn btn-danger" href="#team">Equipo</a>
+                        <a class="page-scroll btn btn-primary btn-md" color="black" href="#team">Equipo</a>
                     </li>
                     <li>
-                        <a class="page-scroll btn btn-primary" href="/home">Login</a>
+                        <a class="page-scroll btn btn-primary" href="/login">Login</a>
                     </li>
                 </ul>
             </div>

@@ -92,7 +92,8 @@ class TorneoUserController extends Controller
         return back();  
     }
 
-    public function change(Request $request, c $c)
+    public function correo()
     {
+        return view('emails.envioCorreo');
     }
 }

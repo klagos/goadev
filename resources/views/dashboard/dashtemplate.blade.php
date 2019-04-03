@@ -61,6 +61,7 @@
                             <a href="/dashboard">
                                 <i class="fas fa-chart-bar"></i>Dashboard</a>
                         </li>
+                        @if(Auth::user()->email != "adm.gameoveraddiction@gmail.com")
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-desktop"></i>Torneos</a>
@@ -73,6 +74,12 @@
                                 </li>
                             </ul>
                         </li>
+                        @else
+                        <li>
+                            <a href="/torneos">
+                                <i class="fas fa-chart-bar"></i>Torneos</a>
+                        </li>
+                        @endif
                     </ul>
             </nav>
         </header>
@@ -84,7 +91,7 @@
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="/">
-                    <img src="{{ asset('images/icon/logoGOA.png') }}" alt="Game Over Addiction" />
+                    <img style="height:60px" src="{{ asset('images/goa.png') }}" alt="Game Over Addiction" />
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
@@ -94,7 +101,7 @@
                             <a href="/dashboard">
                                 <i class="fas fa-chart-bar"></i>Dashboard</a>
                         </li>
-                        @if(Auth::user()->email == "adm.gameoveraddiction@gmail.com")
+                        @if(Auth::user()->email == "adm.gameoveraddiction@gmail.com" OR Auth::user()->email == "javier.moreno.icmin@gmail.com")
                             <li class="has-sub">                            
                                 <a class="js-arrow" href="#">
                                     <i class="fas fa-desktop"></i>Torneos</a>
@@ -116,7 +123,7 @@
                     </ul>
                 </nav>
                 <div style="position:absolute; bottom: 0">
-                <img src="images/pikachu.gif" alt="">
+                <img src="{{ asset('images/pikachu.gif') }}" alt="">
                 </div>
                 
             </div>
@@ -135,7 +142,7 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="{{ asset('images/icon/perfil.png') }}" alt="John Doe" />
+                                            <img src="{{ asset('images/icon/perfil.png') }}" alt="Perfil" />
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn" href="#">{{ Auth::user()->name }}</a>
@@ -144,7 +151,7 @@
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="images/icon/perfil.png" alt="John Doe" />
+                                                        <img src="{{ asset('images/icon/perfil.png') }}" alt="Perfil" />
                                                     </a>
                                                 </div>
                                                 <div class="content">
@@ -156,8 +163,8 @@
                                             </div>
                                             <div class="account-dropdown__body">
                                                 <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-account"></i>Account</a>
+                                                    <a href="/usuarios/detalles/{{ Auth::user()->id }}">
+                                                        <i class="zmdi zmdi-account"></i>Cuenta</a>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">

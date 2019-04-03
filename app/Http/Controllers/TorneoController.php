@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Torneo;
 use App\TorneoUser;
+use App\Mail\Masivo;
+use Illuminate\Support\Facades\Mail;
 
 class TorneoController extends Controller
 {
@@ -103,5 +105,17 @@ class TorneoController extends Controller
     {
         $torneo=DB::table('torneos')->where('torneo_id','=',$torneo_id)->first();
         return view('dashboard.torneos.editarTorneo')->with('torneo',$torneo);
+    }
+
+    public function enviarCorreo(Request $request)
+    {
+        $users = DB::table('users')->whereIn('id',TorneoUser::select('user_id')->where('torneo_id','=', $request->torneo_id)->get())->pluck('email');
+        Mail::to($users)->send(new Masivo($request));
+        return back();
+    }
+
+    public function crearCorreo($torneo_id)
+    {   
+        return view('emails.correo')->with('torneo_id',$torneo_id);
     }
 }

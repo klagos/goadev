@@ -27,7 +27,7 @@
             echo Form::date('fecha', null, ['class' => 'form-control']);
             echo '<br/>';
             echo Form::label('Hora', 'Hora');
-            echo Form::text('hora', null, ['class' => 'form-control']);
+            echo Form::time('hora', null, ['class' => 'form-control']);
             echo '<br/>';
             echo Form::submit('Crear',['class' => 'btn btn-large btn-primary']);
             
