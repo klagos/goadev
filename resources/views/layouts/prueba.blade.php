@@ -95,7 +95,7 @@
                     <div class="team-member">
                         <img src="img/team/tabac.jpg" class="img-responsive img-circle" alt="">
                         <h4>Andres Tabac</h4>
-                        <p class="text-muted">Colaborador Asus</p>
+                        <p class="text-muted">Colaborador</p>
                     </div>
                 </div>
                 <div class="col-sm-4">
@@ -122,11 +122,6 @@
                 <div class="col-md-3 col-sm-6">
                     <a href="#">
                         <img src="img/logos/recargasgamers.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/rog.jpeg" class="img-responsive img-centered" alt="">
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-6">
